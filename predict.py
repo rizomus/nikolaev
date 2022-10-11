@@ -11,9 +11,9 @@ def predict(x):
     
     df_test = pd.read_csv(x, decimal=',' )
     x_test = df_test.iloc[:,[1,2,3,4,5,6,7,8]].values.astype(np.float32)
-    model = load_model('/model_dense_slicing.keras')
+    model = load_model('/content/model_dense_slicing.keras')
 
-    with open(f'sclrX', 'rb') as f:
+    with open(f'/content/sclrX', 'rb') as f:
         sclrX = pickle.load(f)
         f.close
 
