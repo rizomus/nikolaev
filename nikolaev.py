@@ -12,11 +12,12 @@ def predict(x):
     
     df_test = pd.read_csv(x, decimal=',' )
     x_test = df_test.iloc[:,[1,2,3,4,5,6,7,8]].values.astype(np.float32)
-    model = load_model('/content/model_dense_slicing.keras')
+    kpef_test = df_test['KPEF'].values.reshape(-1,1)
+    model = load_model('/content/model_K.keras')
 
     with open(f'/content/sclrX', 'rb') as f:
         sclrX = pickle.load(f)
         f.close
 
     x_test = sclrX.transform(x_test)
-    return model.predict(x_test).squeeze()
+    return model.predict([x_test, kpef_test]).squeeze()
