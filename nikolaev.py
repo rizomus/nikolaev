@@ -18,6 +18,11 @@ def predict(x):
     with open(f'/content/sclrX', 'rb') as f:
         sclrX = pickle.load(f)
         f.close
+        
+    with open(f'/content/sclrX_clip_1500_800', 'rb') as f:
+        sclrK = pickle.load(f)
+        f.close
 
     x_test = sclrX.transform(x_test)
+    kpef_test = sclrK.transform(kpef_test)
     return model.predict([x_test, kpef_test]).squeeze()
