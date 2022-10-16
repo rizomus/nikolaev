@@ -15,11 +15,11 @@ def predict(x):
     kpef_test = df_test['KPEF'].values.reshape(-1,1)
     model = load_model('/content/model_K.keras')
 
-    with open(f'/content/sclrX', 'rb') as f:
+    with open(f'/content/sclrX_clip_1500_800', 'rb') as f:
         sclrX = pickle.load(f)
         f.close
         
-    with open(f'/content/sclrX_clip_1500_800', 'rb') as f:
+    with open(f'/content/sclrK', 'rb') as f:
         sclrK = pickle.load(f)
         f.close
 
