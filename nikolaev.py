@@ -3,7 +3,8 @@ def predict(x):
     '''
     x - файл .csv
     Нулевая колонка не используется
-    Далее 8 параметров (начиная с индекса 1) в порядке: GGKP, GK, PE, DS, DTR, Wi, BK, BMK
+    Далее 8 параметров (начиная с индекса 1) в порядке: GGKP, GK, PE, DS, DTR, Wi, BK, BMK, 
+    Также должна быть колонка с названием KPEF
     '''
     import pandas as pd
     import numpy as np
